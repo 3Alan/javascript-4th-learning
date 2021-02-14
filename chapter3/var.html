@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 局部变量var
+    function test() {
+      var measage = 'hello world'
+    }
+    try {
+      test();
+      console.log(message);
+    } catch (error) {
+      console.log(error);
+    }
+
+    // 不使用var声明变量的话就变成了全局变量
+    function globalTest() {
+      globalTestMessage = 'hello global world';
+    }
+    globalTest();
+    console.log(globalTestMessage);
+
+    // var特性
+    // 1.声明提升
+    // 2.重复声明
+    // 3.有函数作用域，无块级作用域
+    console.log(name);
+    var name = 'Alan';
+
+    var age = 1;
+    var age = 2;
+    var age = 18;
+    console.log(age);
+    
+  </script>
+</body>
+</html>
