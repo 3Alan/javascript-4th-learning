@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var没有块级作用域，有函数作用域
+    if (true) {
+      var name ='Alan';
+      console.log('var inside block', name);
+    }
+    console.log('var outside block', name);
+
+    if (true) {
+      let age = 24;
+      console.log('let inside block', name);
+    }
+    try {
+      console.log(age);
+    } catch (error) {
+      console.error('let outside block throw a error \n', error);
+    }
+    
+  </script>
+</body>
+</html>
