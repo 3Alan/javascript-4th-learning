@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    // var没有块级作用域，有函数作用域
-    if (true) {
-      var name ='Alan';
-      console.log('var inside block', name);
-    }
-    console.log('var outside block', name);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var没有块级作用域，有函数作用域，块级作用域是函数作用域的子集
+      // let不允许在"同一块级作用域"下重复声明
+      if (true) {
+        var name = 'Alan';
+        console.log('var inside block', name);
+      }
+      console.log('var outside block', name);
 
-    if (true) {
-      let age = 24;
-      console.log('let inside block', name);
-    }
-    try {
-      console.log(age);
-    } catch (error) {
-      console.error('let outside block throw a error \n', error);
-    }
-    
-  </script>
-</body>
+      if (true) {
+        let age = 24;
+        console.log('let inside block', name);
+      }
+      try {
+        console.log(age);
+      } catch (error) {
+        console.error('let outside block throw a error \n', error);
+      }
+
+      
+      // let 可以在不同块级作用域下重复声明
+      let key = 'ok';
+      if (true) {
+        let key = 'no';
+        console.log(key);
+      }
+      console.log(key);
+
+      // 同一作用域下不能重复声明
+      // if (true) {
+      //   let money = 1000;
+      //   let money = 2000;
+      // }
+
+      // 暂时性死区
+      // console.log(name); ReferenceError
+      // let name = 'Alan';
+      // let不存在变量提升的问题，但是js在解析代码时会注意到后面的let声明，只是
+      // 在此之前不能以任何方式来引用为声明的变量。所以在let声明前的执行瞬间被
+      // 称之为“暂时性死区”（temporal dead zone）
+
+      // 在全局作用域下声明的变量，var会变成window的属性，而let不会
+      var word = 'hello';
+      console.log('window.word', window.word);
+      let hello = 'world';
+      console.log('window.hello', window.hello);
+    </script>
+  </body>
 </html>
