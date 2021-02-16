@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 0.1 + 0.2 !== 0.3
+      console.log(0.1 + 0.2 === 0.3);
+
+      // js支持的number范围为Number.MIN_VALUE - Number.MAX_VALUE
+      console.log(Number.MIN_VALUE, '---', Number.MAX_VALUE);
+
+      console.log(0 / 0); // NaN
+      console.log(5 / 0); // Infinity
+      console.log(5 / -0); // -Infinity
+
+      // NaN不等于任何值，包括NaN
+      // isNaN会调用valueOf() -> toString()
+      console.log(NaN == NaN); // false
+      console.log(isNaN(NaN)); // true
+
+
+      // 数值转化
+      console.group('数值转化Number()');
+      console.log(Number('hello')); //NaN
+      console.log(Number('')); // 0
+      console.log(Number('0023')); // 23
+      console.log(Number(true)); // 1
+      console.log(Number('123hello')); // NaN
+      console.groupEnd();
+    
+      // 从第一个非空字符串开始解析，一旦碰到非数值字符时，监测结束，第二个参数为解析的进制数
+      console.group('数值转化parseInt()');
+      console.log(parseInt('hello')); // NaN
+      console.log(parseInt('123hello')); //123
+      console.log(parseInt('')); // NaN
+      console.log(parseInt('0023', 10)); // 23
+      console.log(parseInt(true)); // NaN
+      console.groupEnd();
+    
+      console.group('数值转化parseFloat()');
+      console.log(parseFloat('123hello')); //123
+      console.log(parseFloat('22.1')); // 22.1
+      console.log(parseFloat('22.1.2')); // 22.1
+      console.groupEnd();
+    </script>
+  </body>
+</html>

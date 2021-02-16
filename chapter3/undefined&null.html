@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量声明了但是没有初始化时，该变量的值为undefined
+    let name;
+    console.log(name === undefined);
+
+    // 注意点：没有声明的变量，typeof为undefined
+    console.log(typeof age); // undefined
+    console.log(!!typeof age); // true
+    console.log(!!undefined); // false
+    console.log((typeof name) == undefined); // false
+
+    // null表示一个空对象的指针
+    console.log(typeof null); // object
+  </script>
+</body>
+</html>
