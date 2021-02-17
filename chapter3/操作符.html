@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 关系操作符
+      console.group('关系操作符');
+      console.log('3' > '23'); // true，如果两个都是字符串，则比较对应的字符编码
+      console.log(3 > '23'); // false 任一操作符时数值的话，会将另一个操作数转化为数值再进行比较
+      // 注意：涉及到NaN的比较操作符都会返回false
+      console.log(3 > 'b'); // false b会转化为NaN
+      console.log(3 < 'b'); // false b会转化为NaN
+      console.groupEnd();
+
+      console.group('相等操作符');
+      console.log(undefined == null); // true
+      console.log(undefined === null); // false
+      console.groupEnd();
+
+    </script>
+  </body>
+</html>
