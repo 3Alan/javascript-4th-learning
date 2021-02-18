@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 变量分为原始数据类型和引用数据类型
+      // 原始数据类型的复制是对值的复制，引用数据类型的复制时对地址的复制
+
+
+      // 函数参数的例子
+      let count = 10;
+      function add(num) {
+        num += 10;
+        return num;
+      }
+      console.log(add(count), count); // 20 10
+
+      // 看了这个例子可能会认为参数是按照引用传递的
+      let person = new Object();
+      function setName(obj) {
+        obj.name = 'Alan';
+        console.log(obj, 'obj'); // {name: "Alan"}
+      }
+      setName(person);
+      console.log(person); // {name: "Alan"}
+    
+      // 参数是局部变量
+      let person2 = new Object();
+      function setName2(obj) {
+        obj.name = 'Alan';
+        obj = new Object();
+        obj.name = 'Bob'
+        console.log(obj, 'obj'); // {name: "Bob"}
+      }
+      setName2(person2);
+      console.log(person2); // {name: "Alan"}
+
+      // typeof可以用来检测原始值，除了null->typeof null == object
+      // 对于对象的检测可以使用instanceof
+
+
+    </script>
+  </body>
+</html>
