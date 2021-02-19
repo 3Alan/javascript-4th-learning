@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 利用执行上下文的思路来分析变量声明
+      // 使用var声明时，变量会被添加到最接近的上下文。如果变量没声明就被初始化了，那它会被添加到全局上下文中。
+      // var 声明会被拿到函数或全局作用域的顶部（提升）
+      function add(num1, num2) {
+        var sum = num1 + num2;
+        return sum;
+      }
+      let result = add(10, 20);
+      try {
+        console.log(sum);
+      } catch (error) {
+        console.log(error); // ReferenceError: sum is not defined
+      }
+
+      function addpro(num1, num2) {
+        sum = num1 + num2;
+        return sum;
+      }
+      let result1 = addpro(10, 20);
+      console.log(sum); // 30
+    </script>
+  </body>
+</html>
