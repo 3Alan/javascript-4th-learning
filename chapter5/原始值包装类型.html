@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 原始值包装类型有3中：Boolean、Number、String
+      // 建议永远不要使用 new 容易产生误解
+      const value = 25;
+      // 转型函数
+      const value1 = Number(12);
+      const value2 = new Number(12);
+      console.log(typeof value); //number
+      console.log(typeof value1); //number
+      console.log(typeof value2); //object
+
+      // Boolean 和 String 类似
+
+      // String
+      // 字符串原型上暴露了一个@@iterator方法
+      const ss = 'asdf';
+      console.log(ss[Symbol.iterator]); // ƒ [Symbol.iterator]() { [native code] }
+
+      // 因此可以这样使用
+      for (const i of ss) {
+        console.log(i);
+      }
+
+      console.log([...ss]); // ['a', 's', 'd', 'f']
+
+      // toLocaleLowerCase/toLocaleUpperCase(基于特定地区实现) 和 toLowerCase/toUpperCase
+      // 通常，如果不知道代码涉及什么语言，做好使用 toLocaleLowerCase/toLocaleUpperCase
+    </script>
+  </body>
+</html>
